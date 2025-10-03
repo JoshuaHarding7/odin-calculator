@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Odin Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="calculator" aria-label="Calculator">
+    <div id="display" class="display" aria-live="polite">0</div>
+
+<div class="keys">
+  <!-- Row 0 (utility) -->
+  <button data-type="clear">C</button>
+  <button data-type="backspace" aria-label="Backspace">⌫</button>
+  <button data-type="sign" aria-label="Toggle sign">±</button>
+  <button data-type="percent" aria-label="Percent">%</button>
+
+  <!-- Row 1 -->
+  <button data-type="digit" data-digit="7">7</button>
+  <button data-type="digit" data-digit="8">8</button>
+  <button data-type="digit" data-digit="9">9</button>
+  <button data-type="operator" data-op="÷">÷</button>
+
+  <!-- Row 2 -->
+  <button data-type="digit" data-digit="4">4</button>
+  <button data-type="digit" data-digit="5">5</button>
+  <button data-type="digit" data-digit="6">6</button>
+  <button data-type="operator" data-op="×">×</button>
+
+  <!-- Row 3 -->
+  <button data-type="digit" data-digit="1">1</button>
+  <button data-type="digit" data-digit="2">2</button>
+  <button data-type="digit" data-digit="3">3</button>
+  <button data-type="operator" data-op="−">−</button>
+
+  <!-- Row 4 -->
+  <button data-type="decimal" aria-label="Decimal point">.</button>
+  <button data-type="digit" data-digit="0">0</button>
+  <button data-type="equals">=</button>
+  <button data-type="operator" data-op="+">+</button>
+</div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

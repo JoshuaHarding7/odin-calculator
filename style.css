@@ -1,0 +1,65 @@
+* { box-sizing: border-box; }
+:root { --bg: #0f0f10; --panel: #17181a; --ink: #e8e8ea; --muted: #a9acb2; --accent: #2a7cf7; }
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+}
+
+.calculator {
+  width: min(92vw, 380px);
+  background: var(--panel);
+  border: 1px solid #232428;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.display {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 12px;
+  font-size: 2rem;
+  border-radius: 12px;
+  background: #111215;
+  border: 1px solid #24262c;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.keys button {
+  appearance: none;
+  border: 1px solid #24262c;
+  background: #14161a;
+  color: var(--ink);
+  font-size: 1.1rem;
+  padding: 16px 0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.05s ease, background 0.15s ease;
+}
+.keys button:hover { background: #171a1f; }
+.keys button:active { transform: translateY(1px); }
+
+button[data-type="operator"] { background: #182134; border-color: #223559; }
+button[data-type="equals"]   { background: var(--accent); border-color: #296fe0; color: white; }
+button[data-type="clear"]    { background: #3a1b1b; border-color: #5b2a2a; }
+/* Active operator highlight + disabled look */
+.keys button.active-op { outline: 2px solid var(--accent); }
+.keys button:disabled  { opacity: 0.45; cursor: not-allowed; }
+
+/* Slightly shrink font as numbers get long (script also adjusts) */
+.display { font-variant-numeric: tabular-nums; }
